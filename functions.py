@@ -7,9 +7,6 @@ def bin_dec(convert=0, valor=0):
             binStr = str(valor)[::-1]
 
             for i in binStr:
-                # if i == 0:
-                #     p += 1
-                #     continue
                 decimal += int(i) * 2 ** p
                 p += 1
             return decimal
