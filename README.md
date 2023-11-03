@@ -1,2 +1,10 @@
-# base-converter
- Conversor de Base Numérica
+# base-converter 1.0
+ Conversor de Base Numérica feito em *Python*
+
+ ## Funcionalidades ⚙️
+
+ Um **conversor de bases numéricas** capaz de converter de uma base para a base decimal, e **vice-versa**.
+
+ - [x] Decimal ↔️ Binário
+ - [x] Decimal ↔️ Octal
+ - [x] Decimal ↔️ Hexadecimal
