@@ -3,7 +3,7 @@
 
  ## Funcionalidades ⚙️
 
- Um **conversor de bases numéricas** capaz de converter de uma base para a base decimal, e **vice-versa**.
+ Capaz de converter de uma base para a base decimal, e **vice-versa**.
 
  - [x] Decimal ↔️ Binário
  - [x] Decimal ↔️ Octal
