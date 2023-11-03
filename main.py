@@ -1,32 +1,4 @@
-def bin_dec(convert=0, valor=0):
-    match convert:
-        case 1:
-            return bin(valor)[2:]
-        case 2:
-            decimal = p = 0
-            binStr = str(valor)[::-1]
-
-            for i in binStr:
-                i = int(i) * 2
-                if i == 0:
-                    p += 1
-                    continue
-                decimal += i ** p
-                p += 1
-            return decimal
-            
-
-def oct_dec(convert=0, valor=0):
-    match convert:
-        case 1:
-            return oct(valor)[2:]
-
-
-def hex_dec(convert=0, valor=0):
-    match convert:
-        case 1:
-            return hex(valor)[2:]
-
+from functions import *
 
 condicao = 1
 
@@ -64,7 +36,7 @@ while condicao:
             if not opcao2:
                 continue
 
-            valor = int(input('Valor: ').strip())
+            valor = input('Valor: ').strip().lower()
             print(hex_dec(opcao2, valor))
 
         case 0:

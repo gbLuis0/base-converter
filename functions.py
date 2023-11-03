@@ -1,21 +1,54 @@
-# variáveis: número em binário, decimal, potência, binário em str, i
-# 1.  número em binário:                             1  0  1  0  (int) 
-# 2.  inverter:                                      0  1  0  1  (str)
-# 3.  iterar cada item, cada item se multiplica por 2 (int)
-# 4.  se item==0: ignorar iteração (continue)
-# 5.1 elevar a potência 0 até a última contagem:     0⁰ [2¹] 0² [2³] (int)
-# 5.2 após o cálculo do item na sua potência, somá-lo junto a variável "decimal" (int)
+def bin_dec(convert=0, valor=0):
+    match convert:
+        case 1:
+            return bin(valor)[2:]
+        case 2:
+            decimal = p = 0
+            binStr = str(valor)[::-1]
 
-binario = 1010
-decimal = p = 0
-binStr = str(binario)[::-1]
+            for i in binStr:
+                # if i == 0:
+                #     p += 1
+                #     continue
+                decimal += int(i) * 2 ** p
+                p += 1
+            return decimal
+            
 
-for i in binStr:
-    i = int(i) * 2
-    if i == 0:
-        p += 1
-        continue
-    decimal += i ** p
-    p += 1
+def oct_dec(convert=0, valor=0):
+    match convert:
+        case 1:
+            return oct(valor)[2:]
+        case 2:
+            decimal = p = 0
+            octStr = str(valor)[::-1]
 
-print(decimal)
+            for i in octStr:
+                decimal += int(i) * 8 ** p
+                p += 1
+            return decimal
+
+
+def hex_dec(convert=0, valor=''):
+    match convert:
+        case 1:
+            return str(hex(int(valor)))[2:]
+        case 2:
+            letras = {
+                'a': 10,
+                'b': 11,
+                'c': 12,
+                'd': 13,
+                'e': 14,
+                'f': 15
+            }
+            decimal = p = 0
+            hexStr = valor[::-1]
+
+            for i in hexStr:
+                if i.isalpha():
+                    i = letras[i]
+
+                decimal += int(i) * 16 ** p
+                p += 1
+            return decimal
