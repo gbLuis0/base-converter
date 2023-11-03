@@ -1,34 +1,72 @@
-def bin_to_dec(bina=0):
-    # estas funções vão do bin para dec e vice versa,
-    # com uma variável verificando quem será convertido
-    pass
+def bin_dec(convert=0, valor=0):
+    match convert:
+        case 1:
+            return bin(valor)[2:]
+        case 2:
+            decimal = p = 0
+            binStr = str(valor)[::-1]
+
+            for i in binStr:
+                i = int(i) * 2
+                if i == 0:
+                    p += 1
+                    continue
+                decimal += i ** p
+                p += 1
+            return decimal
+            
+
+def oct_dec(convert=0, valor=0):
+    match convert:
+        case 1:
+            return oct(valor)[2:]
 
 
-def oct_to_dec(octa=0):
-    pass
-
-
-def hex_to_dec(hexa=0):
-    pass
+def hex_dec(convert=0, valor=0):
+    match convert:
+        case 1:
+            return hex(valor)[2:]
 
 
 condicao = 1
 
 while condicao:
+    print('\x1b[2J\x1b[1;1H')
     print('[ 1 ] > Binário\n[ 2 ] > Octal\n[ 3 ] > Hexadecimal\n\n[ 0 ] > Sair\n')
     opcao = int(input('>>> ').strip()[0])
 
+    print('\x1b[2J\x1b[1;1H')
     if not opcao:
         break
-    decimal = int(input('Número decimal: ').strip())
 
     match opcao:
         case 1:
-            print('Em binário:', bin(decimal)[2:])
+            print('[ 1 ] | Decimal -> Binário\n[ 2 ] | Binário -> Decimal\n\n[ 0 ] | Voltar\n')
+            opcao2 = int(input('>>> ').strip()[0])
+            if not opcao2:
+                continue
+
+            valor = int(input('Valor: ').strip())
+            print(bin_dec(opcao2, valor))
+
         case 2:
-            print('Em octal:', oct(decimal)[2:])
+            print('[ 1 ] | Decimal -> Octal\n[ 2 ] | Octal -> Decimal\n\n[ 0 ] | Voltar\n')
+            opcao2 = int(input('>>> ').strip()[0])
+            if not opcao2:
+                continue
+
+            valor = int(input('Valor: ').strip())
+            print(oct_dec(opcao2, valor))
+
         case 3:
-            print('Em hexadecimal:', hex(decimal)[2:])
+            print('[ 1 ] | Decimal -> Hexadecimal\n[ 2 ] | Hexadecimal -> Decimal\n\n[ 0 ] | Voltar\n')
+            opcao2 = int(input('>>> ').strip()[0])
+            if not opcao2:
+                continue
+
+            valor = int(input('Valor: ').strip())
+            print(hex_dec(opcao2, valor))
+
         case 0:
             break
 
