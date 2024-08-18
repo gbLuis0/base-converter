@@ -30,6 +30,7 @@ def hex_dec(convert=0, valor=''):
     match convert:
         case 1:
             return str(hex(int(valor)))[2:]
+        
         case 2:
             letras = {
                 'a': 10,
@@ -48,4 +49,5 @@ def hex_dec(convert=0, valor=''):
 
                 decimal += int(i) * 16 ** p
                 p += 1
+                
             return decimal

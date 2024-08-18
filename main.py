@@ -1,10 +1,18 @@
 from functions import *
+from colorama import Fore, Style
+
+f = Style.RESET_ALL
+ng = Style.BRIGHT
+verde_ng = Fore.GREEN + ng
+amare = Fore.YELLOW
+verme = Fore.RED
+azul_ng = Fore.BLUE + ng
 
 condicao = 1
 
 while condicao:
     print('\x1b[2J\x1b[1;1H')
-    print('[ 1 ] > Binário\n[ 2 ] > Octal\n[ 3 ] > Hexadecimal\n\n[ 0 ] > Sair\n')
+    print(f'[ {azul_ng}1{f} ] > {azul_ng}Binário{f}\n[ {azul_ng}2{f} ] > {azul_ng}Octal{f}\n[ {azul_ng}3{f} ] > {azul_ng}Hexadecimal{f}\n\n[ {verme}0{f} ] {verme}Sair{f}\n')
     opcao = int(input('>>> ').strip()[0])
 
     print('\x1b[2J\x1b[1;1H')
@@ -13,7 +21,7 @@ while condicao:
 
     match opcao:
         case 1:
-            print('[ 1 ] | Decimal -> Binário\n[ 2 ] | Binário -> Decimal\n\n[ 0 ] | Voltar\n')
+            print(f'[ {verde_ng}1{f} ] | {amare}Decimal{f} -> {verde_ng}Binário{f}\n[ {verde_ng}2{f} ] | {amare}Binário{f} -> {verde_ng}Decimal{f}\n\n[ {verme}0{f} ] {verme}Voltar{f}\n')
             opcao2 = int(input('>>> ').strip()[0])
             if not opcao2:
                 continue
@@ -22,7 +30,7 @@ while condicao:
             print(bin_dec(opcao2, valor))
 
         case 2:
-            print('[ 1 ] | Decimal -> Octal\n[ 2 ] | Octal -> Decimal\n\n[ 0 ] | Voltar\n')
+            print(f'[ {verde_ng}1{f} ] | {amare}Decimal{f} -> {verde_ng}Octal{f}\n[ {verde_ng}2{f} ] | {amare}Octal{f} -> {verde_ng}Decimal{f}\n\n[ {verme}0{f} ] {verme}Voltar{f}\n')
             opcao2 = int(input('>>> ').strip()[0])
             if not opcao2:
                 continue
@@ -31,7 +39,7 @@ while condicao:
             print(oct_dec(opcao2, valor))
 
         case 3:
-            print('[ 1 ] | Decimal -> Hexadecimal\n[ 2 ] | Hexadecimal -> Decimal\n\n[ 0 ] | Voltar\n')
+            print(f'[ {verde_ng}1{f} ] | {amare}Decimal{f} -> {verde_ng}Hexadecimal{f}\n[ {verde_ng}2{f} ] | {amare}Hexadecimal{f} -> {verde_ng}Decimal{f}\n\n[ {verme}0{f} ] {verme}Voltar{f}\n')
             opcao2 = int(input('>>> ').strip()[0])
             if not opcao2:
                 continue

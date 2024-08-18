@@ -36,8 +36,8 @@
 ## Download for Linux
 ```
 apt install git python3
-git clone https://github.com/gb_Luis0/hangman-game
-cd hangman-game
+git clone https://github.com/gb_Luis0/base-converter
+cd base-converter
 python main.py
 ```
 
